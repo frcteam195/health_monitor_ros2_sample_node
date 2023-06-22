@@ -156,6 +156,7 @@ def main(args=None):
     node.loop_thread.start()
     rclpy.spin(node)
     rclpy.shutdown()
+    node.loop_thread.join()
 
 
 if __name__ == '__main__':
