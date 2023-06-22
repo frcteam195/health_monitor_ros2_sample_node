@@ -153,6 +153,7 @@ def main(args=None):
     signal.signal(signal.SIGINT, signal_handler)
     rclpy.init(args=args)
     node = LocalNode()
+    node.loop_thread.start()
     rclpy.spin(node)
     rclpy.shutdown()
 
