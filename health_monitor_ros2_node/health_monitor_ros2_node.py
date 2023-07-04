@@ -4,7 +4,7 @@ import sys
 from threading import Thread
 import rclpy
 from frc_robot_utilities_ros2_py_node.BufferedROSMsgHandlerPy import BufferedROSMsgHandlerPy
-from health_monitor_ros2_sample_node.generated.parameters import ParameterizedNode
+from health_monitor_ros2_node.generated.parameters import ParameterizedNode
 
 from std_msgs.msg import String
 
@@ -15,7 +15,7 @@ from typing import List
 
 class LocalNode(ParameterizedNode):
     def __init__(self):
-        super().__init__('health_monitor_ros2_sample_node')
+        super().__init__('health_monitor_ros2_node')
         self.status_publisher = self.create_publisher(topic="HealthMonitorStatus", msg_type=HealthMonitorStatus, qos=10)
 
         self.fault_list = []
